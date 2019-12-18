@@ -20,46 +20,49 @@
     <div class="funcModule" id="funcModule">
       <el-row :gutter='20'>
         <el-col :xs='24' :sm='12' :lg='8'>
-          <a href="">
-              <img :src="industryUrl" alt="" title="中国高校产学共创排行榜">
-              </a>
+          <router-link to="/home/industry">
+          <FuncModule :imgSrc='industryUrl' title="中国高校产学共创排行榜"></FuncModule>
+          </router-link>
         </el-col>
         <el-col :xs='24' :sm='12' :lg='8'>
-          <a>
-            <img :src="worldmapUrl" alt="" title="中国高校产学共创排行榜">
-              </a>
+          <FuncModule :imgSrc='fushionUrl' title="中国高校学科融合指数"></FuncModule>
         </el-col>
         <el-col :xs='24' :sm='12' :lg='8'>
-              <a><img :src="papermatrixUrl" alt="" title="中国高校产学共创排行榜"></a>
+              <FuncModule :imgSrc='papermatrixUrl' title="中国高校论文产出矩阵"></FuncModule>
         </el-col>
         <el-col :xs='24' :sm='12' :lg='8'>
-              <a><img :src="patentmatrixUrl" alt="" title="中国高校产学共创排行榜"></a>
+              <FuncModule :imgSrc='patentmatrixUrl' title="中国高校专利产出矩阵"></FuncModule>
         </el-col>
         <el-col :xs='24' :sm='12' :lg='8'>
-              <a><img :src="medicalUrl" alt="" title="中国高校产学共创排行榜"></a>
+              <FuncModule :imgSrc='worldmapUrl' title="中国高校论文国际合作地图"></FuncModule>
         </el-col>
         <el-col :xs='24' :sm='12' :lg='8'>
-              <a><img :src="fushionUrl" alt="" title="中国高校产学共创排行榜"></a>
+              <FuncModule :imgSrc='medicalUrl' title="医疗机构医工结合排行榜"></FuncModule>
         </el-col>
       </el-row>
     </div>
     <Footer></Footer>
+    <CopyRight></CopyRight>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Footer from '../components/Footer'
+import FuncModule from '../components/FuncModule';
+import Footer from '../components/Footer';
 import industry from '../assets/industry.png';
 import worldmap from "../../src/assets/map.png";
 import papermatrix from "../../src/assets/paperMatrix.png";
 import patentmatrix from "../../src/assets/patentMatrix.png";
 import medical from "../../src/assets/medical.png";
 import fushion from "../../src/assets/fushion.png";
+import CopyRight from '../components/CopyRight';
 export default {
   name: 'home',
   components: {
-    Footer
+    Footer,
+    CopyRight,
+    FuncModule
   },
   data() {
     return {
@@ -79,28 +82,28 @@ export default {
   @import url("../assets/less/base.less");
   .home{
     .banner{
-      text-align-last: center;
+      text-align: center;
       margin: 4rem 0;
       .el-row{
         width: 1200px;
         max-width: calc(100% - 2rem);
         margin: 0 auto;
-      }
-      h1{
+        h1{
         font-size: 2rem;
         color: @brand-color;
-      }
-      h3{
+        }
+        h3{
         line-height: 3rem;
         font-size: 1rem;
         font-weight: 500;
         color: @font-primary-color;
-      }
-      @media screen and (max-width: 992px) {
-        h3 {
+          }
+        @media screen and (max-width: 992px) {
+          h3 {
           font-size: 1rem;
           line-height: 2.5rem;
           text-align: justify;
+          }
         }
       }
     }

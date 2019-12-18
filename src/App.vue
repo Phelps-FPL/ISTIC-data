@@ -30,17 +30,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: @font-color;
   text-align: center;
-}
-
-.el-container{
-  .el-header{
+  .el-container{
+    .el-header{
+      padding: 0;
+      width: 100%;
+    }
+    .el-main{
     padding: 0;
-    width: 100%;
+    background-color: @background-color;
+    overflow: visible !important;
+    }     
   }
 }
-el-main{
-  padding: 0;
-  background-color: @background-color;
-  overflow: visible !important;
-}
+
 </style>
