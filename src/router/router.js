@@ -20,7 +20,6 @@ const routes = [
   },
   {
     path: '/home/industry',
-    name:'industry',
     component: () => import('../views/Industry.vue')
   }
 ]

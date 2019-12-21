@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
     <el-menu :default-active="activeIndex"  mode="horizontal" router>
-  <el-menu-item index="/home" class='logo'>
+  <el-menu-item index="/" class='logo'>
     <img src="../assets/logo.svg" alt="data-logo" srcset />
   </el-menu-item>
   <el-menu-item index="/about" class="right">指南</el-menu-item>
